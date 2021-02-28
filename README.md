@@ -1,3 +1,5 @@
+# xv6-armv6-rpi
+
 The xv6-armv6-rpi is based on zhiyihuang/xv6_rpi_port (https://github.com/zhiyihuang/xv6_rpi_port). As the zhiyihuang version doesn't boot my Raspberry Pi B, as it supposed to do, I have done some changes in order to succefully boot my pi.
 
 xv6_rpi_port is based on MIT xv6 (http://pdos.csail.mit.edu/6.828/2012/v6.html).
@@ -6,7 +8,7 @@ the coding style of xv6 as much as possible to hide the architectural
 differences between x86 and armv6. The port is not for multiprocessor yet
 as RPI has only a single processor.
 
-ACKNOWLEDGEMENTS
+## ACKNOWLEDGEMENTS
 
 xv6_rpi_port is inspired by MIT xv6 and Alex Chadwick's Baking Pi 
 Tutorials (http://www.cl.cam.ac.uk/projects/raspberrypi/tutorials/os/).
@@ -21,11 +23,11 @@ though the assembly code was completely rewritten.
 David Welch's RPI code (https://github.com/dwelch67/raspberrypi) is also
 inspiring for trap handling and uart driver.
 
-Building xv6-armv6-rpi
+## Building xv6-armv6-rpi
 
 Get the source with:
 
-git clone https://github.com/inaciose/xv6-armv6-rpi.git
+git clone https://github.com/xt0fer/xv6-armv6-rpi.git
 
 On an some rpi installed with Raspbian, type: 'make' to make 'kernel.img'.
 
