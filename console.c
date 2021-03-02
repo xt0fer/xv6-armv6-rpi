@@ -131,49 +131,49 @@ uint tv;
 void
 gpuputc(uint c)
 {
-    if(c=='\n'){
-	cursor_x = 0;
-	cursor_y += fontheight;
-	if(cursor_y >= frameheight) {
-		memmove((u8 *)fbinfo.fbp, (u8 *)fbinfo.fbp+framewidth*fontheight*2, (frameheight - fontheight)*framewidth*2);
-		cursor_y = frameheight - fontheight;
-		setgpucolour(0);
-		while(cursor_x < framewidth) {
-		    drawcursor(cursor_x, cursor_y);
-		    cursor_x = cursor_x + fontwidth;
-		}
-		setgpucolour(0xffff);
-		cursor_x = 0;
-	}
-    } else if(c == BACKSPACE) {
-	if (cursor_x > 0) {
-		cursor_x -= fontwidth;
-		setgpucolour(0);
-		drawcursor(cursor_x, cursor_y);
-		setgpucolour(0xffff);
-	}
-    } else {
-	setgpucolour(0);
-	drawcursor(cursor_x, cursor_y);
-	setgpucolour(0xffff);
-	if(c!=' ') drawcharacter(c, cursor_x, cursor_y);
-	cursor_x = cursor_x + fontwidth;
-	if(cursor_x >= framewidth) {
-	    cursor_x = 0;
-	    cursor_y += fontheight;
-	    if(cursor_y >= frameheight) {
-		memmove((u8 *)fbinfo.fbp, (u8 *)fbinfo.fbp+framewidth*fontheight*2, (frameheight - fontheight)*framewidth*2);
-		cursor_y = frameheight - fontheight;
-		setgpucolour(0);
-		while(cursor_x < framewidth) {
-		    drawcursor(cursor_x, cursor_y);
-		    cursor_x = cursor_x + fontwidth;
-		}
-		setgpucolour(0xffff);
-		cursor_x = 0;
-	    }
-	}
-    }
+  //   if(c=='\n'){
+	// cursor_x = 0;
+	// cursor_y += fontheight;
+	// if(cursor_y >= frameheight) {
+	// 	memmove((u8 *)fbinfo.fbp, (u8 *)fbinfo.fbp+framewidth*fontheight*2, (frameheight - fontheight)*framewidth*2);
+	// 	cursor_y = frameheight - fontheight;
+	// 	setgpucolour(0);
+	// 	while(cursor_x < framewidth) {
+	// 	    drawcursor(cursor_x, cursor_y);
+	// 	    cursor_x = cursor_x + fontwidth;
+	// 	}
+	// 	setgpucolour(0xffff);
+	// 	cursor_x = 0;
+	// }
+  //   } else if(c == BACKSPACE) {
+	// if (cursor_x > 0) {
+	// 	cursor_x -= fontwidth;
+	// 	setgpucolour(0);
+	// 	drawcursor(cursor_x, cursor_y);
+	// 	setgpucolour(0xffff);
+	// }
+  //   } else {
+	// setgpucolour(0);
+	// drawcursor(cursor_x, cursor_y);
+	// setgpucolour(0xffff);
+	// if(c!=' ') drawcharacter(c, cursor_x, cursor_y);
+	// cursor_x = cursor_x + fontwidth;
+	// if(cursor_x >= framewidth) {
+	//     cursor_x = 0;
+	//     cursor_y += fontheight;
+	//     if(cursor_y >= frameheight) {
+	// 	memmove((u8 *)fbinfo.fbp, (u8 *)fbinfo.fbp+framewidth*fontheight*2, (frameheight - fontheight)*framewidth*2);
+	// 	cursor_y = frameheight - fontheight;
+	// 	setgpucolour(0);
+	// 	while(cursor_x < framewidth) {
+	// 	    drawcursor(cursor_x, cursor_y);
+	// 	    cursor_x = cursor_x + fontwidth;
+	// 	}
+	// 	setgpucolour(0xffff);
+	// 	cursor_x = 0;
+	//     }
+	// }
+  //   }
 
 }
 

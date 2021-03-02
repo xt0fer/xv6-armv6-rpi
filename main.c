@@ -58,7 +58,7 @@ int cmain( uint r0)
   machinit();
   uartinit();
   dsb_barrier();
-  consoleinit();
+  //consoleinit();
   cprintf("\nHello World from xv6\n");
   kinit1(end, P2V(8*1024*1024));  // reserve 8 pages for PGDIR
   kpgdir=p2v(K_PDX_BASE);

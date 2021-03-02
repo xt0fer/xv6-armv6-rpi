@@ -127,7 +127,7 @@ void ___puts(const char *s)
 void 
 uartinit(void)
 {
-  /*
+  
   write32(AUX_ENABLES, 1);
 	write32(AUX_MU_CNTL_REG, 0);
 	write32(AUX_MU_LCR_REG, 0x3);
@@ -146,7 +146,7 @@ uartinit(void)
 	write32(GPPUDCLK0, 0);
 
 	write32(AUX_MU_CNTL_REG, 3);
-  */
   
-	enableirqminiuart();
+  
+	//enableirqminiuart();
 }
