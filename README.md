@@ -1,3 +1,8 @@
+# expanded xv6 on PiZeroW
+
+- clean port on PiZeroW
+- add tools
+
 # xv6-armv6-rpi
 
 The xv6-armv6-rpi is based on zhiyihuang/xv6_rpi_port (https://github.com/zhiyihuang/xv6_rpi_port). As the zhiyihuang version doesn't boot my Raspberry Pi B, as it supposed to do, I have done some changes in order to succefully boot my pi.
