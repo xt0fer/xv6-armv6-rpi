@@ -1,7 +1,7 @@
 # specify path to QEMU, installed with MacPorts 
 QEMU = qemu-system-arm
 
-include makefile.inc
+include ../makefile.inc
 
 # link the libgcc.a for __aeabi_idiv. ARM has no native support for div
 LIBS = $(LIBGCC) libcsud.a
@@ -67,12 +67,12 @@ build/initcode: $(addprefix build/,$(INITCODE_OBJ))
 	$(OBJDUMP) -S $< > initcode.asm
 
 build/fs.img:
-	make -C tools
-	make -C usr
+	make -C ../tools
+	make -C ../usr
 
 clean: 
 	rm -rf build
 	rm -f *.o *.d *.asm *.sym vectors.S bootblock \
 	initcode initcode.out fs.img kernel.elf kernel.dis kernel.img
-	make -C tools clean
-	make -C usr clean
+	make -C ../tools clean
+	make -C ../usr clean

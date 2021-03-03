@@ -58,8 +58,8 @@ int cmain( uint r0)
   machinit();
   uartinit();
   dsb_barrier();
-  //consoleinit();
-  cprintf("\nHello World from xv6\n");
+  consoleinit();
+  cprintf("\nHello World from  xv6  on Raspi Zero\n");
   kinit1(end, P2V(8*1024*1024));  // reserve 8 pages for PGDIR
   kpgdir=p2v(K_PDX_BASE);
 
@@ -85,10 +85,11 @@ int cmain( uint r0)
 //cprintf("it is ok after ideinit\n");
   timer3init();
   kinit2(P2V(8*1024*1024), P2V(PHYSTOP));
-//cprintf("it is ok after kinit2\n");
+cprintf("it is ok after kinit2\n");
   userinit();
-//cprintf("it is ok after userinit\n");
+cprintf("it is ok after userinit\n");
   scheduler();
+cprintf("it is ok after scheduler\n");
 
 
   NotOkLoop();

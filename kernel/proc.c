@@ -96,14 +96,14 @@ userinit(void)
 
   _binary_initcode_size = (uint)_binary_initcode_end - (uint)_binary_initcode_start;
   p = allocproc();
-//cprintf("after allocproc: initcode start: %x end %x\n", _binary_initcode_start, _binary_initcode_end);
+cprintf("after allocproc: initcode start: %x end %x\n", _binary_initcode_start, _binary_initcode_end);
   initproc = p;
-//cprintf("initproc is %x\n", initproc);
+cprintf("initproc is %x\n", initproc);
   if((p->pgdir = setupkvm()) == 0)
     panic("userinit: out of memory?");
-//cprintf("after setupkvm\n");
+cprintf("after setupkvm\n");
   inituvm(p->pgdir, _binary_initcode_start, _binary_initcode_size);
-//cprintf("after initkvm\n");
+cprintf("after initkvm\n");
   p->sz = PGSIZE;
   memset(p->tf, 0, sizeof(*p->tf));
   p->tf->spsr = 0x10;
