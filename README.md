@@ -1,7 +1,7 @@
 # expanded xv6 on PiZeroW
 
 - clean port on PiZeroW
-- add tools
+- add tools (now, which ones?)
 
 # xv6-armv6-rpi
 
