@@ -77,7 +77,7 @@ consolewrite(struct inode *ip, char *buf, int n)
   iunlock(ip);
   acquire(&cons.lock);
   for(i = 0; i < n; i++){
-    gpuputc(buf[i] & 0xff);
+    //gpuputc(buf[i] & 0xff);
     uartputc(buf[i] & 0xff);
   }
   release(&cons.lock);
@@ -297,13 +297,13 @@ consputc(int c)
   }
 
   if(c == BACKSPACE){
-    gpuputc('\b'); gpuputc(' '); gpuputc('\b');
+    //gpuputc('\b'); gpuputc(' '); gpuputc('\b');
     uartputc('\b'); uartputc(' '); uartputc('\b');
   } else if(c == C('D')) {
-    gpuputc('^'); gpuputc('D');
+    //gpuputc('^'); gpuputc('D');
     uartputc('^'); uartputc('D');
   } else {
-    gpuputc(c);
+    //gpuputc(c);
     uartputc(c);
   }
 }

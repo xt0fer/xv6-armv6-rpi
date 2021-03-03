@@ -6,6 +6,9 @@ include ../makefile.inc
 # link the libgcc.a for __aeabi_idiv. ARM has no native support for div
 LIBS = $(LIBGCC) libcsud.a
 
+#        keyboard.o\
+# removed to reduce reliance on "console"
+
 OBJS = \
 	bio.o\
 	console.o\
@@ -13,8 +16,7 @@ OBJS = \
 	exec.o\
 	file.o\
 	fs.o\
-        kalloc.o\
-        keyboard.o\
+    kalloc.o\
 	log.o\
 	mailbox.o\
 	main.o\
