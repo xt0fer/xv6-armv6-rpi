@@ -5,7 +5,7 @@ ASFLAGS += -I ../
 ULIB = ulib.o usys.o printf.o umalloc.o
 
 MKFS = ../tools/mkfs
-FS_IMAGE = ../build/fs.img
+FS_IMAGE = ../kernel/build/fs.img
 
 UPROGS=\
 	_cat\
