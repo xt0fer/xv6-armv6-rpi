@@ -13,6 +13,7 @@ UPROGS=\
 	_grep\
 	_init\
 	_kill\
+	_kilo\
 	_ln\
 	_ls\
 	_mkdir\
